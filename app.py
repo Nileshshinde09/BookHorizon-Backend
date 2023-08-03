@@ -55,7 +55,7 @@ def recommend():
         return response
     
 
-@app.route('/getISBN',methods=['GET','POST']
+@app.route('/getISBN',methods=['GET','POST'])
 def findISBN():
     nameofbook=request.args.get('isbn')
     if nameofbook:
