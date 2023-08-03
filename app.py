@@ -29,8 +29,9 @@ def Home():
         return response
 
 
-@app.route('/recommend_books/<string:nameofbook>',methods=['GET','POST'])
-def recommend(nameofbook):
+@app.route('/recommend_books',methods=['GET','POST'])
+def recommend():
+    nameofbook = request.args.get('bookname')
     if nameofbook:
         book_name_input = nameofbook
         index = np.where(pt.index == book_name_input)[0][0]
