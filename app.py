@@ -71,9 +71,9 @@ def findISBN():
         
         except Exception as e:
             return jsonify({"error":e})    
-@app.route('/getDetialsOnISBN/<string:nameofbook>',methods=['GET','POST'])
+@app.route('/getDetialsOnISBN',methods=['GET','POST'])
 def getDetialsOnISBN(nameofbook):
-    
+    nameofbook=request.args.get('ISBN')
     if nameofbook:
         try:
             response = jsonify(getDETAILS(nameofbook))
